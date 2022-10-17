@@ -37,7 +37,9 @@
       }
     ],
     "no-shadow": "off",
-    "lines-between-class-members": "off"
+    "lines-between-class-members": "off",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"]
   },
   "settings": {
     "import/resolver": {

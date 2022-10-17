@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CreateCategoryUseCase from './categories-create.use-case';
+import CreateCategoryUseCase from './create-category.use-case';
 
 export class CreateCategoryController {
   constructor(private createCategoryUseCase: CreateCategoryUseCase) {}

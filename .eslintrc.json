@@ -41,7 +41,8 @@
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": ["error"],
     "class-methods-use-this": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/prefer-default-export": "off"
   },
   "settings": {
     "import/resolver": {

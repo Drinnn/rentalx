@@ -5,6 +5,7 @@
   "username": "rentalx",
   "password": "rentalx",
   "database": "rentalx",
+  "entities": ["./src/modules/**/*.entity*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"

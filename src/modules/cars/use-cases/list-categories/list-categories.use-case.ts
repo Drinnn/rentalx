@@ -1,11 +1,11 @@
-import Category from '../../entites/category.entity';
+import Category from '../../entities/category.entity';
 import ICategoriesRepository from '../../repositories/categories-repository.interface';
 
 export class ListCategoriesUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  execute(): Category[] {
-    const categories = this.categoriesRepository.find();
+  async execute(): Promise<Category[]> {
+    const categories = await this.categoriesRepository.find();
 
     return categories;
   }

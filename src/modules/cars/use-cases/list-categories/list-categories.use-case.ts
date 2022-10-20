@@ -1,8 +1,13 @@
+import { inject, injectable } from 'tsyringe';
 import Category from '../../entities/category.entity';
 import ICategoriesRepository from '../../repositories/categories-repository.interface';
 
+@injectable()
 export class ListCategoriesUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository,
+  ) {}
 
   async execute(): Promise<Category[]> {
     const categories = await this.categoriesRepository.find();

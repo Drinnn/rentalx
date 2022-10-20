@@ -12,7 +12,7 @@
     "/categories": {
       "post": {
         "tags": ["Category"],
-        "summary": "Create a Category",
+        "summary": "Create Category",
         "requestBody": {
           "content": {
             "application/json": {
@@ -75,6 +75,67 @@
               }
             }
           }
+        }
+      }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": ["Category"],
+        "summary": "Import Categories",
+        "description": "Creates new categories by file upload",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": ["Specifications"],
+        "summary": "Create Specification",
+        "description": "Creates an Specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/SpecificationCreationBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SpecificationCreationBody": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
         }
       }
     }

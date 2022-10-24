@@ -1,5 +1,6 @@
 import express from 'express';
 import swaggerUI from 'swagger-ui-express';
+import * as dotenv from 'dotenv';
 
 import swaggerFile from './swagger.json';
 
@@ -7,6 +8,8 @@ import './database';
 import './shared/container';
 
 import router from './routes';
+
+dotenv.config();
 
 const app = express();
 

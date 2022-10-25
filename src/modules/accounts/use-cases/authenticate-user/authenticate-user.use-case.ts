@@ -1,6 +1,7 @@
 import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
+import AppError from '../../../../errors/app.error';
 import IUsersRepository from '../../repositories/users-repository.interface';
 
 interface IAuthenticateUserInputDto {
@@ -29,12 +30,12 @@ export class AuthenticateUserUseCase {
   }: IAuthenticateUserInputDto): Promise<IAuthenticateUserOutputDto> {
     const existingUser = await this.usersRepository.findByEmail(email);
     if (!existingUser) {
-      throw new Error('Invalid credentials.');
+      throw new AppError('Invalid credentials.', 401);
     }
 
     const matchingPassword = await compare(password, existingUser.password);
     if (!matchingPassword) {
-      throw new Error('Invalid credentials.');
+      throw new AppError('Invalid credentials.', 401);
     }
 
     const token = sign({}, process.env.JWT_SECRET, {

@@ -23,6 +23,11 @@ services:
       - db
     depends_on:
       - db
+  db_adminer:
+    image: adminer
+    container_name: rentalx_db_adminer
+    ports:
+      - 8080:8080
 
 volumes:
   pgdata:

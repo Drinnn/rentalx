@@ -1,4 +1,5 @@
 import { inject, injectable } from 'tsyringe';
+import { deleteFile } from '../../../../utils/file';
 import IUsersRepository from '../../repositories/users-repository.interface';
 
 interface IUploadUserAvatarUseCaseInputDto {
@@ -18,6 +19,10 @@ export class UploadUserAvatarUseCase {
     avatarFileName,
   }: IUploadUserAvatarUseCaseInputDto): Promise<void> {
     const user = await this.usersRepository.findById(userId);
+
+    if (user.avatar) {
+      await deleteFile(`./tmp/avatar/${user.avatar}`);
+    }
 
     user.avatar = avatarFileName;
 

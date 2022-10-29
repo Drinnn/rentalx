@@ -1,5 +1,5 @@
 import ICategoriesRepository from '@modules/cars/repositories/categories-repository.interface';
-import CategoriesInMemoryRepository from '@modules/cars/repositories/implementations/catetories-in-memory.repository';
+import CategoriesInMemoryRepository from '@modules/cars/repositories/catetories-in-memory.repository';
 import CreateCategoryUseCase from '@modules/cars/use-cases/create-category/create-category.use-case';
 
 let categoriesInMemoryRepository: ICategoriesRepository;

@@ -1,5 +1,5 @@
 import ICreateUserDTO from '@modules/accounts/dtos/user-create.dto';
-import UsersInMemoryRepository from '@modules/accounts/repositories/implementations/users-in-memory.repository';
+import UsersInMemoryRepository from '@modules/accounts/repositories/users-in-memory.repository';
 import IUsersRepository from '@modules/accounts/repositories/users-repository.interface';
 import AuthenticateUserUseCase from '@modules/accounts/use-cases/authenticate-user/authenticate-user.use-case';
 import CreateUserUseCase from '@modules/accounts/use-cases/create-user/create-user.use-case';

@@ -1,4 +1,4 @@
-import Specification from '@modules/cars/entities/specification.entity';
+import Specification from '@modules/cars/infra/typeorm/entities/specification.entity';
 import ISpecificationsRepository, {
   ICreateSpecificationDTO,
 } from '@modules/cars/repositories/specifications-repository.interface';

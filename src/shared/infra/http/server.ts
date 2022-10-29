@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 
 import swaggerFile from '../../../swagger.json';
 
-import '../../../database';
+import '../typeorm';
 import '../../container';
 
 import errorsHandler from '@shared/infra/http/middlewares/errors-handler.middleware';

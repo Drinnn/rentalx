@@ -11,6 +11,7 @@
       "@shared/*": ["shared/*"],
       "@utils/*": ["utils/*"]
     },
+    "typeRoots": ["./src/@types"],
     "resolveJsonModule": true,
     "outDir": "./dist",
     "esModuleInterop": true,

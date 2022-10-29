@@ -1,5 +1,5 @@
-import AppError from '@errors/app.error';
 import IUsersRepository from '@modules/accounts/repositories/users-repository.interface';
+import AppError from '@shared/errors/app.error';
 import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';

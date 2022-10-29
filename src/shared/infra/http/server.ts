@@ -3,13 +3,13 @@ import 'express-async-errors';
 import swaggerUI from 'swagger-ui-express';
 import * as dotenv from 'dotenv';
 
-import swaggerFile from './swagger.json';
+import swaggerFile from '../../../swagger.json';
 
-import './database';
-import './shared/container';
+import '../../../database';
+import '../../container';
 
-import router from './routes';
-import errorsHandler from 'middlewares/errors-handler.middleware';
+import errorsHandler from '@shared/infra/http/middlewares/errors-handler.middleware';
+import router from '@shared/infra/http/routes';
 
 dotenv.config();
 

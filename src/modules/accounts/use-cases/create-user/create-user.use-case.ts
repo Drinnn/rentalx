@@ -1,6 +1,6 @@
-import AppError from '@errors/app.error';
 import ICreateUserDTO from '@modules/accounts/dtos/user-create.dto';
 import IUsersRepository from '@modules/accounts/repositories/users-repository.interface';
+import AppError from '@shared/errors/app.error';
 import { hash } from 'bcrypt';
 import { inject, injectable } from 'tsyringe';
 

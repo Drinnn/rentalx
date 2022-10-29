@@ -9,7 +9,7 @@ import './database';
 import './shared/container';
 
 import router from './routes';
-import errorsHandler from './middlewares/errors-handler.middleware';
+import errorsHandler from 'middlewares/errors-handler.middleware';
 
 dotenv.config();
 

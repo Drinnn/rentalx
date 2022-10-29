@@ -1,6 +1,6 @@
+import AuthenticateUserUseCase from '@modules/accounts/use-cases/authenticate-user/authenticate-user.use-case';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
-import AuthenticateUserUseCase from './authenticate-user.use-case';
 
 export class AuthenticateUserController {
   async handle(req: Request, res: Response): Promise<Response> {

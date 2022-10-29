@@ -1,6 +1,6 @@
+import IUsersRepository from '@modules/accounts/repositories/users-repository.interface';
+import { deleteFile } from '@utils/file';
 import { inject, injectable } from 'tsyringe';
-import { deleteFile } from '../../../../utils/file';
-import IUsersRepository from '../../repositories/users-repository.interface';
 
 interface IUploadUserAvatarUseCaseInputDto {
   userId: string;

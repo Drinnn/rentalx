@@ -1,8 +1,8 @@
-import ICreateUserDTO from '../../dtos/user-create.dto';
-import UsersInMemoryRepository from '../../repositories/implementations/users-in-memory.repository';
-import IUsersRepository from '../../repositories/users-repository.interface';
-import CreateUserUseCase from '../create-user/create-user.use-case';
-import AuthenticateUserUseCase from './authenticate-user.use-case';
+import ICreateUserDTO from '@modules/accounts/dtos/user-create.dto';
+import UsersInMemoryRepository from '@modules/accounts/repositories/implementations/users-in-memory.repository';
+import IUsersRepository from '@modules/accounts/repositories/users-repository.interface';
+import AuthenticateUserUseCase from '@modules/accounts/use-cases/authenticate-user/authenticate-user.use-case';
+import CreateUserUseCase from '@modules/accounts/use-cases/create-user/create-user.use-case';
 
 describe('Authenticate User', () => {
   let usersInMemoryRepository: IUsersRepository;

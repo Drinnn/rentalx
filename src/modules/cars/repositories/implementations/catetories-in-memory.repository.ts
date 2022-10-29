@@ -1,7 +1,7 @@
-import Category from '../../entities/category.entity';
+import Category from '@modules/cars/entities/category.entity';
 import ICategoriesRepository, {
   ICreateCategoryDTO,
-} from '../categories-repository.interface';
+} from '@modules/cars/repositories/categories-repository.interface';
 
 export class CategoriesInMemoryRepository implements ICategoriesRepository {
   categories: Category[] = [];

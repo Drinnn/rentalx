@@ -1,6 +1,6 @@
+import UploadUserAvatarUseCase from '@modules/accounts/use-cases/upload-user-avatar/upload-user-avatar.use-case';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
-import UploadUserAvatarUseCase from './upload-user-avatar.use-case';
 
 export class UploadUserAvatarController {
   async handle(req: Request, res: Response): Promise<Response> {

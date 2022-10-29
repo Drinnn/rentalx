@@ -1,6 +1,6 @@
+import ImportCategoryUseCase from '@modules/cars/use-cases/import-category/import-category.use-case';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
-import ImportCategoryUseCase from './import-category.use-case';
 
 export class ImportCategoryController {
   async handle(req: Request, res: Response): Promise<Response> {

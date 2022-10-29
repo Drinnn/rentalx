@@ -1,6 +1,6 @@
-import ICategoriesRepository from '../../repositories/categories-repository.interface';
-import CategoriesInMemoryRepository from '../../repositories/implementations/catetories-in-memory.repository';
-import CreateCategoryUseCase from './create-category.use-case';
+import ICategoriesRepository from '@modules/cars/repositories/categories-repository.interface';
+import CategoriesInMemoryRepository from '@modules/cars/repositories/implementations/catetories-in-memory.repository';
+import CreateCategoryUseCase from '@modules/cars/use-cases/create-category/create-category.use-case';
 
 let categoriesInMemoryRepository: ICategoriesRepository;
 let createCategoryUseCase: CreateCategoryUseCase;

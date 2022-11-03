@@ -5,7 +5,6 @@
 
 **Business Rules**
 - It must not be possible to create a new car with existing plate.
-- It must not be possible to change an already created car's plate.
 - The created car must be available by default.
 - The user responsible for creating the cars must be an admin.
 

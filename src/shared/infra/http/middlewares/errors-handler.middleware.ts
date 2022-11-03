@@ -8,6 +8,8 @@ export async function errorsHandler(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   next: NextFunction,
 ) {
+  console.log(err);
+
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({ message: err.message });
   }

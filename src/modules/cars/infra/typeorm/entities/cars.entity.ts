@@ -3,6 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryColumn,
 } from 'typeorm';
@@ -38,6 +39,7 @@ export class Car {
   categoryId: string;
 
   @ManyToOne(() => Category, category => category.cars)
+  @JoinColumn({ name: 'category_id' })
   category: Category;
 
   @CreateDateColumn({ name: 'created_at' })

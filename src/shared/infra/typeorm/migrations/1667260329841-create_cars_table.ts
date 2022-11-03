@@ -34,7 +34,7 @@ export class createCarsTable1667260329841 implements MigrationInterface {
           },
           {
             name: 'fine_amount',
-            type: 'varchar',
+            type: 'numeric',
           },
           {
             name: 'brand',

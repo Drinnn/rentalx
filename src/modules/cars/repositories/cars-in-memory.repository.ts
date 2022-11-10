@@ -15,6 +15,18 @@ export class CarsInMemoryRepository implements ICarsRepository {
     return car;
   }
 
+  async update(car: Car): Promise<Car> {
+    const existingCar = this.cars[this.cars.indexOf(car)];
+
+    Object.assign(existingCar, car);
+
+    return existingCar;
+  }
+
+  async findById(id: string): Promise<Car> {
+    return this.cars.find(car => car.id === id);
+  }
+
   async findByLicensePlate(licensePlate: string): Promise<Car> {
     return this.cars.find(car => car.licensePlate === licensePlate);
   }

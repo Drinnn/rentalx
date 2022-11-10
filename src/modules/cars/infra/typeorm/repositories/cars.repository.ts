@@ -33,6 +33,14 @@ export class CarsRepository implements ICarsRepository {
     return this.repository.save(car);
   }
 
+  async update(car: Car): Promise<Car> {
+    return this.repository.save(car);
+  }
+
+  async findById(id: string): Promise<Car> {
+    return this.repository.findOne({ where: { id } });
+  }
+
   async findByLicensePlate(licensePlate: string): Promise<Car> {
     return this.repository.findOne({ where: { licensePlate } });
   }

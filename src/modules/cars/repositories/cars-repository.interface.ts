@@ -4,6 +4,8 @@ import { IListAvailableCarsUseCaseInputDto } from '@modules/cars/use-cases/list-
 
 export interface ICarsRepository {
   create(data: ICreateCarUseCaseInputDto): Promise<Car>;
+  update(car: Car): Promise<Car>;
+  findById(id: string): Promise<Car>;
   findByLicensePlate(licensePlate: string): Promise<Car>;
   findAllAvailables(params: IListAvailableCarsUseCaseInputDto): Promise<Car[]>;
 }

@@ -1,9 +1,12 @@
 import Category from '@modules/cars/infra/typeorm/entities/category.entity';
+import Specification from '@modules/cars/infra/typeorm/entities/specification.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
   ManyToOne,
   PrimaryColumn,
 } from 'typeorm';
@@ -41,6 +44,14 @@ export class Car {
   @ManyToOne(() => Category, category => category.cars)
   @JoinColumn({ name: 'category_id' })
   category: Category;
+
+  @ManyToMany(() => Specification)
+  @JoinTable({
+    name: 'specifications_cars',
+    joinColumn: { name: 'car_id' },
+    inverseJoinColumn: { name: 'specification_id' },
+  })
+  specifications: Specification[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

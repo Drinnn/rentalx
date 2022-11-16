@@ -35,7 +35,6 @@
 # Car's Image Upload
 **Functional Requirements**
 - It must be possible to upload a car's image
-- It must be possible to list all cars.
 
 **Non Functional Requirements**
 - Use multer for file upload.

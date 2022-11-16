@@ -9,6 +9,7 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
 
 @Entity('rentals')
 export class Rental {
@@ -46,6 +47,12 @@ export class Rental {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuidV4();
+    }
+  }
 }
 
 export default Rental;

@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import Rental from '@modules/rentals/infra/typeorm/entities/rentals.entity';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
 @Entity('users')
@@ -23,6 +30,9 @@ export class User {
 
   @Column()
   avatar: string;
+
+  @OneToMany(() => Rental, rental => rental.user)
+  rentals: Rental[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

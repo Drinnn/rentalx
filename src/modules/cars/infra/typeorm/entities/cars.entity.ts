@@ -1,6 +1,7 @@
 import CarImage from '@modules/cars/infra/typeorm/entities/car-image.entity';
 import Category from '@modules/cars/infra/typeorm/entities/category.entity';
 import Specification from '@modules/cars/infra/typeorm/entities/specification.entity';
+import Rental from '@modules/rentals/infra/typeorm/entities/rentals.entity';
 import {
   Column,
   CreateDateColumn,
@@ -57,6 +58,9 @@ export class Car {
 
   @OneToMany(() => CarImage, carImage => carImage.car)
   images: CarImage[];
+
+  @OneToMany(() => Rental, rental => rental.car)
+  rentals: Rental[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -1,3 +1,4 @@
+import CarImage from '@modules/cars/infra/typeorm/entities/car-image.entity';
 import Category from '@modules/cars/infra/typeorm/entities/category.entity';
 import Specification from '@modules/cars/infra/typeorm/entities/specification.entity';
 import {
@@ -8,6 +9,7 @@ import {
   JoinTable,
   ManyToMany,
   ManyToOne,
+  OneToMany,
   PrimaryColumn,
 } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
@@ -52,6 +54,9 @@ export class Car {
     inverseJoinColumn: { name: 'specification_id' },
   })
   specifications: Specification[];
+
+  @OneToMany(() => CarImage, carImage => carImage.car)
+  images: CarImage[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

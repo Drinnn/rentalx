@@ -11,13 +11,21 @@ export class RentalsRepository implements IRentalsRepository {
   }
 
   create(data: ICreateRentalUseCaseInputDto): Promise<Rental> {
-    throw new Error('Method not implemented.');
+    const { carId, userId, expectedReturnDate } = data;
+
+    const rental = this.repository.create({
+      carId,
+      userId,
+      expectedReturnDate,
+    });
+
+    return this.repository.save(rental);
   }
   findByCar(carId: string): Promise<Rental> {
-    throw new Error('Method not implemented.');
+    return this.repository.findOne({ where: { carId, endDate: null } });
   }
   findByUser(userId: string): Promise<Rental> {
-    throw new Error('Method not implemented.');
+    return this.repository.findOne({ where: { userId, endDate: null } });
   }
 }
 

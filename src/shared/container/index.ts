@@ -22,7 +22,7 @@ container.registerSingleton<ISpecificationsRepository>(
   SpecificationsRepository,
 );
 container.registerSingleton<IUsersRepository>(
-  'UsersReposito  ry',
+  'UsersRepository',
   UsersRepository,
 );
 container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
